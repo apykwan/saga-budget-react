@@ -3,16 +3,16 @@ import { Segment, Grid } from 'semantic-ui-react';
 
 import DisplayBalance from './DisplayBalance';
 
-const DisplayBalances = () => {
+const DisplayBalances = ({ incomeTotal, expenseTotal }) => {
     return (
-        <Segment textAlign="cneter">
+        <Segment textAlign="center">
             <Grid columns={2} divided>
                 <Grid.Row>
                     <Grid.Column>
-                        <DisplayBalance title="Incomes" value="1000.00" color="green" />
+                        <DisplayBalance title="Incomes" value={incomeTotal.toFixed(2)} color="green" />
                     </Grid.Column>
                     <Grid.Column>
-                        <DisplayBalance title="Expenses" value="750.00" color="red" />
+                        <DisplayBalance title="Expenses" value={expenseTotal.toFixed(2)} color="red" />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
